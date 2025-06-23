@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="center"
+    android:padding="16dp"
+    android:background="@drawable/fondoclaro">
+
+    <TextView
+        android:id="@+id/textoEstadoMotor"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@color/blancoT"
+        android:text="Estado del motor: ---"
+        android:textSize="18sp"
+        android:paddingBottom="24dp"/>
+
+    <Switch
+        android:id="@+id/switch_motor"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@color/blancoT"
+        android:text="Encender / Apagar Motor"/>
+</LinearLayout>

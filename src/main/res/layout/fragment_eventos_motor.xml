@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="16dp"
+    android:background="@drawable/fondoclaro"
+    tools:context=".fragment.EventosMotorFragment">
+
+    <TextView
+
+        android:id="@+id/tituloGrafica"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Consumo de agua (ml)"
+        android:textStyle="bold"
+        android:textSize="18sp"
+        android:layout_marginTop="36dp"
+        android:textColor="@color/black"
+        android:background="@color/blancoT"
+        android:layout_marginStart="16dp" />
+
+    <!-- Gráfica de barras -->
+    <com.github.mikephil.charting.charts.BarChart
+        android:id="@+id/barChart"
+        android:textColor="@color/black"
+        android:background="@color/blancoT"
+        android:layout_width="match_parent"
+        android:layout_height="250dp"
+        android:layout_margin="16dp" />
+
+    <!-- RecyclerView con la Lista de eventos -->
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recyclerEventos"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:textColor="@color/black"
+        android:background="@color/blancoT"
+        android:padding="16dp" />
+
+</LinearLayout>

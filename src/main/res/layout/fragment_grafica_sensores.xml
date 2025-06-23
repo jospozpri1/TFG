@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="24dp"
+    android:background="@drawable/fondoclaro" >
+    <LinearLayout
+        android:id="@+id/linearLayout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:padding="16dp">
+
+        <Spinner
+            android:id="@+id/spinnerPeriodo"
+            android:layout_width="match_parent"
+            android:layout_height="48dp"
+            android:textColor="@color/black"
+            android:background="@color/blancoT"
+            android:entries="@array/periodos_array" />
+
+        <Spinner
+            android:id="@+id/spinnerSensor"
+
+            android:textColor="@color/black"
+            android:background="@color/blancoT"
+            android:layout_width="match_parent"
+            android:layout_height="48dp" />
+
+        <Button
+            android:id="@+id/btnCargar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Cargar datos" />
+
+        <com.github.mikephil.charting.charts.LineChart
+            android:id="@+id/lineChart"
+            android:layout_width="match_parent"
+            android:layout_height="300dp"
+            android:background="@color/blancoT"
+            android:visibility="gone" />
+
+        <com.github.mikephil.charting.charts.BarChart
+            android:id="@+id/barChart"
+            android:layout_width="match_parent"
+            android:background="@color/blancoT"
+            android:layout_height="300dp"
+            android:visibility="gone" />
+
+    </LinearLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>

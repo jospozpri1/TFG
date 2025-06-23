@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/usuario_navigation"
+    app:startDestination="@id/nav_inicio">
+
+    <fragment
+        android:id="@+id/nav_inicio"
+        android:name="com.dam.invernadero.fragment.InicioFragment"
+        android:label="Inicio"
+        tools:layout="@layout/fragment_inicio" />
+
+    <fragment
+        android:id="@+id/nav_perfil"
+        android:name="com.dam.invernadero.fragment.PerfilFragment"
+        android:label="Perfil de Usuario"
+        tools:layout="@layout/fragment_perfil">
+        <argument
+            android:name="userData"
+            app:argType="string" />
+    </fragment>
+    <fragment
+        android:id="@+id/nav_tiempo"
+        android:name="com.dam.invernadero.fragment.TiempoFragment"
+        android:label="Previsión del tiempo"
+        tools:layout="@layout/fragment_tiempo" />
+    <fragment
+        android:id="@+id/nav_precios_electricidad"
+        android:name="com.dam.invernadero.fragment.PreciosElectricidadFragment"
+        android:label="Precios electricidad"
+        tools:layout="@layout/fragment_precios_electricidad" />
+    <fragment
+        android:id="@+id/nav_limites"
+        android:name="com.dam.invernadero.fragment.LimitesFragment"
+        android:label="Límites"
+        tools:layout="@layout/fragment_limites" />
+    <fragment
+        android:id="@+id/nav_actuadores"
+        android:name="com.dam.invernadero.fragment.ActuadoresFragment"
+        android:label="Actuadores"
+        tools:layout="@layout/fragment_actuadores" />
+    <fragment
+        android:id="@+id/nav_graficas"
+        android:name="com.dam.invernadero.fragment.GraficaSensoresFragment"
+        android:label="Graficas"
+        tools:layout="@layout/fragment_grafica_sensores" />
+    <fragment
+        android:id="@+id/nav_eventos_motor"
+        android:name="com.dam.invernadero.fragment.EventosMotorFragment"
+        android:label="Eventos"
+        tools:layout="@layout/fragment_eventos_motor" />
+</navigation>

@@ -1,0 +1,14 @@
+<resources>
+    <string name="app_name">Invernadero</string>
+    //http://192.168.199.17:9000/
+    <string name="IP">http://192.168.1.155:9000/</string>
+    <string name="nav_header_desc">Navigation</string>
+    <string name="nav_header_title">ETSINATURA</string>
+    <string name="nav_header_subtitle">Gestor de un invernadero de la ETSI</string>
+    <string-array name="periodos_array">
+        <item>Hoy</item>
+        <item>Últimos 7 días</item>
+        <item>Último mes</item>
+    </string-array>
+
+</resources>

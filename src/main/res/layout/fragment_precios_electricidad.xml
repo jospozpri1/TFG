@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="16dp"
+    android:background="@drawable/fondoclaro">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:gravity="center">
+
+        <TextView
+            android:id="@+id/textoPrecios"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textColor="@color/black"
+            android:background="@color/blancoT"
+            android:textSize="16sp"
+            android:layout_marginTop="40dp"
+            android:text="Cargando precios..." />
+
+        <Button
+            android:id="@+id/btnAgregarHora"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Agregar hora de riego" />
+
+        <TextView
+            android:id="@+id/textoHorasSeleccionadas"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textColor="@color/black"
+            android:background="@color/blancoT"
+            android:textSize="16sp"
+
+            android:text="Horas seleccionadas:" />
+
+        <Button
+            android:id="@+id/btnEnviarHoras"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Enviar horas al servidor" />
+
+    </LinearLayout>
+</ScrollView>

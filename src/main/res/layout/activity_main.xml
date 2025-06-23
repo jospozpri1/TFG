@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="16dp"
+    android:background="@drawable/fondo_inicio"
+    >
+
+
+    <TextView
+        android:id="@+id/texto_usuario"
+        android:layout_width="wrap_content"
+        android:layout_height="30dp"
+        android:layout_marginTop="250dp"
+        android:layout_gravity="center_horizontal"
+        android:text="Usuario:"
+        android:textSize="25sp"
+        android:textStyle="bold"
+        android:fontFamily="sans-serif"
+        android:textColor="@color/azulF"
+        android:background="#A2FFFFFF"
+        android:textAppearance="?android:attr/textAppearanceLarge"></TextView>
+
+    <EditText
+        android:id="@+id/txtUsuario"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="0dp"
+        android:hint="usuario"
+        android:background="#A2FFFFFF"
+        android:textStyle="italic" />
+    <TextView
+        android:id="@+id/texto_contrasena"
+        android:layout_width="wrap_content"
+        android:layout_height="30dp"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="15dp"
+        android:text="Contraseña:"
+        android:textSize="25sp"
+        android:textStyle="bold"
+        android:fontFamily="sans-serif"
+        android:textColor="@color/azulF"
+        android:background="#A2FFFFFF"
+        android:textAppearance="?android:attr/textAppearanceLarge" ></TextView>
+
+    <EditText
+        android:hint="***"
+        android:id="@+id/txtContrasena"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="0dp"
+        android:inputType="textPassword"
+        android:background="#A2FFFFFF"
+
+        android:textStyle="italic"/>
+
+    <Button
+        android:id="@+id/btnLogin"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="5dp"
+        android:width="175dp"
+        android:text="Acceder"
+        android:textStyle="bold"
+        android:fontFamily="sans-serif"
+        android:textSize="17sp"
+        android:backgroundTint="@color/azultransparente"
+        android:onClick="Hacer_peticion_acceso"/>
+
+    <Button
+        android:id="@+id/btnRegister"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="5dp"
+        android:width="175dp"
+        android:text="Registrarse"
+        android:textStyle="bold"
+        android:fontFamily="sans-serif"
+        android:textSize="17sp"
+        android:backgroundTint="@color/azultransparente"
+        android:onClick="Hacer_registro"/>
+
+
+
+</LinearLayout>

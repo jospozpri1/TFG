@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:fitsSystemWindows="true"
+    android:background="@drawable/fondoclaro">
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:padding="16dp"
+        android:orientation="vertical"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="40dp">
+
+        <EditText
+            android:id="@+id/etCiudad"
+            android:layout_width="match_parent"
+            android:layout_height="48dp"
+            android:textColor="@color/black"
+            android:background="@color/blancoT"
+            android:hint="Ciudad" />
+
+        <EditText
+            android:id="@+id/etPais"
+            android:layout_width="match_parent"
+            android:layout_height="48dp"
+
+            android:textColor="@color/black"
+            android:background="@color/blancoT"
+            android:hint="País (código, ej: ES)" />
+
+        <Button
+            android:id="@+id/btnBuscar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Buscar clima" />
+
+        <TextView
+            android:id="@+id/textoTiempo"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Esperando datos..."
+
+            android:textColor="@color/black"
+            android:background="@color/grisT"
+            android:textSize="18sp"
+            android:paddingTop="16dp"
+            android:visibility="gone"/>
+    </LinearLayout>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

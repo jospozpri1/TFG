@@ -1,0 +1,381 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/fondoclaro"
+    android:padding="24dp">
+
+    <!-- Campo para la Temperatura mínima -->
+    <TextView
+        android:id="@+id/tvTempMin"
+        android:text="Temperatura mín (ºC)"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="40dp"
+        android:layout_marginEnd="16dp"
+        android:textSize="18sp"
+        android:textColor="@color/black"
+        android:background="@color/blancoT"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toStartOf="@id/etTempMin"
+        app:layout_constraintWidth_percent="0.5"/>
+
+    <EditText
+        android:id="@+id/etTempMin"
+        android:inputType="numberDecimal"
+        android:enabled="false"
+        android:hint="0.0"
+        android:layout_width="0dp"
+        android:layout_height="48dp"
+        android:textSize="16sp"
+        android:textColor="@color/black"
+        android:background="@color/blancoT"
+        android:gravity="center"
+        app:layout_constraintTop_toTopOf="@id/tvTempMin"
+        app:layout_constraintBottom_toBottomOf="@id/tvTempMin"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintWidth_percent="0.3"/>
+
+    <!-- Campo para la Temperatura máxima -->
+
+    <TextView
+        android:id="@+id/tvTempMax"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="40dp"
+        android:layout_marginEnd="16dp"
+        android:background="@color/blancoT"
+        android:text="Temperatura máx (ºC)"
+        android:textColor="@color/black"
+        android:textSize="18sp"
+        app:layout_constraintEnd_toStartOf="@id/etTempMax"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tvTempMin"
+        app:layout_constraintWidth_percent="0.5" />
+
+    <EditText
+        android:id="@+id/etTempMax"
+        android:inputType="numberDecimal"
+        android:enabled="false"
+        android:hint="0.0"
+        android:layout_width="0dp"
+        android:layout_height="48dp"
+        android:textSize="16sp"
+        android:textColor="@color/black"
+        android:background="@color/blancoT"
+        android:gravity="center"
+        app:layout_constraintTop_toTopOf="@id/tvTempMax"
+        app:layout_constraintBottom_toBottomOf="@id/tvTempMax"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintWidth_percent="0.3"/>
+
+    <!-- Campo para la Humedad ambiental mínima -->
+
+    <TextView
+        android:id="@+id/tvHumedadAmbMin"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="32dp"
+        android:layout_marginEnd="16dp"
+        android:background="@color/blancoT"
+        android:text="Humedad ambiental mínima (0 - 100%)"
+        android:textColor="@color/black"
+        android:textSize="18sp"
+        app:layout_constraintEnd_toStartOf="@id/etHumedadAmbMin"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tvTempMax"
+        app:layout_constraintWidth_percent="0.5" />
+
+    <EditText
+        android:id="@+id/etHumedadAmbMin"
+        android:inputType="numberDecimal"
+        android:enabled="false"
+        android:hint="0.0"
+        android:layout_width="0dp"
+        android:layout_height="48dp"
+        android:textSize="16sp"
+        android:textColor="@color/black"
+        android:background="@color/blancoT"
+        android:gravity="center"
+        app:layout_constraintTop_toTopOf="@id/tvHumedadAmbMin"
+        app:layout_constraintBottom_toBottomOf="@id/tvHumedadAmbMin"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintWidth_percent="0.3"/>
+
+    <!-- Campo para la Humedad ambiental máxima -->
+    <TextView
+        android:id="@+id/tvHumedadAmbMax"
+        android:text="Humedad ambiental máxima (0 - 100%)"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="16dp"
+        android:textSize="18sp"
+        android:textColor="@color/black"
+        android:background="@color/blancoT"
+        app:layout_constraintTop_toBottomOf="@id/tvHumedadAmbMin"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toStartOf="@id/etHumedadAmbMax"
+        app:layout_constraintWidth_percent="0.5"/>
+
+    <EditText
+        android:id="@+id/etHumedadAmbMax"
+        android:inputType="numberDecimal"
+        android:enabled="false"
+        android:hint="0.0"
+        android:layout_width="0dp"
+        android:layout_height="48dp"
+        android:textSize="16sp"
+        android:textColor="@color/black"
+        android:background="@color/blancoT"
+        android:gravity="center"
+        app:layout_constraintTop_toTopOf="@id/tvHumedadAmbMax"
+        app:layout_constraintBottom_toBottomOf="@id/tvHumedadAmbMax"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintWidth_percent="0.3"/>
+
+    <!-- Campo para la Humedad del suelo mínima -->
+    <TextView
+        android:id="@+id/tvHumedadSueloMin"
+        android:text="Humedad suelo mínima (0 - 100%)"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="16dp"
+        android:textSize="18sp"
+        android:textColor="@color/black"
+        android:background="@color/blancoT"
+        app:layout_constraintTop_toBottomOf="@id/tvHumedadAmbMax"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toStartOf="@id/etHumedadSueloMin"
+        app:layout_constraintWidth_percent="0.5"/>
+
+    <EditText
+        android:id="@+id/etHumedadSueloMin"
+        android:inputType="number"
+        android:enabled="false"
+        android:hint="0"
+        android:layout_width="0dp"
+        android:layout_height="48dp"
+        android:textSize="16sp"
+        android:textColor="@color/black"
+        android:background="@color/blancoT"
+        android:gravity="center"
+        app:layout_constraintTop_toTopOf="@id/tvHumedadSueloMin"
+        app:layout_constraintBottom_toBottomOf="@id/tvHumedadSueloMin"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintWidth_percent="0.3"/>
+
+    <!-- Campo para la Humedad del suelo máxima -->
+    <TextView
+        android:id="@+id/tvHumedadSueloMax"
+        android:text="Humedad suelo máxima (0 - 100%)"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="16dp"
+        android:textSize="18sp"
+        android:textColor="@color/black"
+        android:background="@color/blancoT"
+        app:layout_constraintTop_toBottomOf="@id/tvHumedadSueloMin"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toStartOf="@id/etHumedadSueloMax"
+        app:layout_constraintWidth_percent="0.5"/>
+
+    <EditText
+        android:id="@+id/etHumedadSueloMax"
+        android:inputType="number"
+        android:enabled="false"
+        android:hint="0"
+        android:layout_width="0dp"
+        android:layout_height="48dp"
+        android:textSize="16sp"
+        android:textColor="@color/black"
+        android:background="@color/blancoT"
+        android:gravity="center"
+        app:layout_constraintTop_toTopOf="@id/tvHumedadSueloMax"
+        app:layout_constraintBottom_toBottomOf="@id/tvHumedadSueloMax"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintWidth_percent="0.3"/>
+
+    <!-- Campo para la Luz mínima -->
+
+    <TextView
+        android:id="@+id/tvLuzMin"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="32dp"
+        android:layout_marginEnd="16dp"
+        android:background="@color/blancoT"
+        android:text="Luz mínima (0 - 100%)"
+        android:textColor="@color/black"
+        android:textSize="18sp"
+        app:layout_constraintEnd_toStartOf="@id/etLuzMin"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tvHumedadSueloMax"
+        app:layout_constraintWidth_percent="0.5" />
+
+    <EditText
+        android:id="@+id/etLuzMin"
+        android:inputType="number"
+        android:enabled="false"
+        android:hint="0"
+        android:layout_width="0dp"
+        android:layout_height="48dp"
+        android:textSize="16sp"
+        android:textColor="@color/black"
+        android:background="@color/blancoT"
+        android:gravity="center"
+        app:layout_constraintTop_toTopOf="@id/tvLuzMin"
+        app:layout_constraintBottom_toBottomOf="@id/tvLuzMin"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintWidth_percent="0.3"/>
+
+    <!-- Campo para la Luz máxima -->
+
+    <TextView
+        android:id="@+id/tvLuzMax"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="32dp"
+        android:layout_marginEnd="16dp"
+        android:background="@color/blancoT"
+        android:text="Luz máxima (0 - 100%)"
+        android:textColor="@color/black"
+        android:textSize="18sp"
+        app:layout_constraintEnd_toStartOf="@id/etLuzMax"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tvLuzMin"
+        app:layout_constraintWidth_percent="0.5" />
+
+    <EditText
+        android:id="@+id/etLuzMax"
+        android:inputType="number"
+        android:enabled="false"
+        android:hint="0"
+        android:layout_width="0dp"
+        android:layout_height="48dp"
+        android:textSize="16sp"
+        android:textColor="@color/black"
+        android:background="@color/blancoT"
+        android:gravity="center"
+        app:layout_constraintTop_toTopOf="@id/tvLuzMax"
+        app:layout_constraintBottom_toBottomOf="@id/tvLuzMax"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintWidth_percent="0.3"/>
+
+    <!-- Campo para el Consumo de agua -->
+
+    <TextView
+        android:id="@+id/tvConsumoAguaMax"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="28dp"
+        android:layout_marginEnd="16dp"
+        android:background="@color/blancoT"
+        android:text="Consumo de agua máximo (L)"
+        android:textColor="@color/black"
+        android:textSize="18sp"
+        app:layout_constraintEnd_toStartOf="@id/etConsumoAguaMax"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tvLuzMax"
+        app:layout_constraintWidth_percent="0.5" />
+
+    <EditText
+        android:id="@+id/etConsumoAguaMax"
+        android:inputType="numberDecimal"
+        android:enabled="false"
+        android:hint="0.0"
+        android:layout_width="0dp"
+        android:layout_height="48dp"
+        android:textSize="16sp"
+        android:textColor="@color/black"
+        android:background="@color/blancoT"
+        android:gravity="center"
+        app:layout_constraintTop_toTopOf="@id/tvConsumoAguaMax"
+        app:layout_constraintBottom_toBottomOf="@id/tvConsumoAguaMax"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintWidth_percent="0.3"/>
+
+    <!-- Campo para el Volumen de agua mínimo -->
+    <TextView
+        android:id="@+id/tvVolumenAguaMin"
+        android:text="Volumen de agua mínimo (0 - 100%)"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="16dp"
+        android:textSize="18sp"
+        android:textColor="@color/black"
+        android:background="@color/blancoT"
+        app:layout_constraintTop_toBottomOf="@id/tvConsumoAguaMax"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toStartOf="@id/etVolumenAguaMin"
+        app:layout_constraintWidth_percent="0.5"/>
+
+    <EditText
+        android:id="@+id/etVolumenAguaMin"
+        android:inputType="numberDecimal"
+        android:enabled="false"
+        android:hint="0.0"
+        android:layout_width="0dp"
+        android:layout_height="48dp"
+        android:textSize="16sp"
+        android:textColor="@color/black"
+        android:background="@color/blancoT"
+        android:gravity="center"
+        app:layout_constraintTop_toTopOf="@id/tvVolumenAguaMin"
+        app:layout_constraintBottom_toBottomOf="@id/tvVolumenAguaMin"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintWidth_percent="0.3"/>
+
+    <!-- Campo para las Horas de riego -->
+
+    <TextView
+        android:id="@+id/tvHorasRiego"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:background="@color/blancoT"
+        android:enabled="false"
+        android:text="Horas de riego"
+        android:textColor="@color/black"
+        android:textSize="20sp"
+        app:layout_constraintTop_toBottomOf="@id/etVolumenAguaMin"
+        tools:layout_editor_absoluteX="32dp" />
+
+    <TextView
+        android:id="@+id/tvListaHorasRiego"
+        android:text="Seleccione las horas"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textColor="@color/black"
+        android:background="@color/blancoT"
+        android:layout_marginTop="8dp"
+        android:textSize="18sp"
+        app:layout_constraintTop_toBottomOf="@id/tvHorasRiego"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"/>
+
+    <Button
+        android:id="@+id/btnGuardar"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="12dp"
+        android:backgroundTint="@color/celeste"
+        android:enabled="false"
+        android:paddingVertical="12dp"
+        android:text="Guardar cambios"
+        android:textColor="@color/white"
+        android:textSize="18sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.496"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tvListaHorasRiego"
+        app:layout_constraintWidth_percent="0.6" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
