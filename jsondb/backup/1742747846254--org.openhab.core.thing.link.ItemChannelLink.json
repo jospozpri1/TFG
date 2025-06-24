@@ -1,0 +1,140 @@
+{
+  "OrionEntities -\u003e http:url:14a6186366:sensor": {
+    "class": "org.openhab.core.thing.link.ItemChannelLink",
+    "value": {
+      "channelUID": {
+        "segments": [
+          "http",
+          "url",
+          "14a6186366",
+          "sensor"
+        ],
+        "uid": "http:url:14a6186366:sensor"
+      },
+      "configuration": {
+        "properties": {}
+      },
+      "itemName": "OrionEntities"
+    }
+  },
+  "OrionHumedadAmbiental -\u003e http:url:14a6186366:sensor": {
+    "class": "org.openhab.core.thing.link.ItemChannelLink",
+    "value": {
+      "channelUID": {
+        "segments": [
+          "http",
+          "url",
+          "14a6186366",
+          "sensor"
+        ],
+        "uid": "http:url:14a6186366:sensor"
+      },
+      "configuration": {
+        "properties": {
+          "transformation": "JSONPATH:$[0].humedad_ambiental.value"
+        }
+      },
+      "itemName": "OrionHumedadAmbiental"
+    }
+  },
+  "OrionHumedadSuelo -\u003e http:url:14a6186366:sensor": {
+    "class": "org.openhab.core.thing.link.ItemChannelLink",
+    "value": {
+      "channelUID": {
+        "segments": [
+          "http",
+          "url",
+          "14a6186366",
+          "sensor"
+        ],
+        "uid": "http:url:14a6186366:sensor"
+      },
+      "configuration": {
+        "properties": {
+          "transformation": "JSONPATH:$[0].humedad_suelo.value"
+        }
+      },
+      "itemName": "OrionHumedadSuelo"
+    }
+  },
+  "OrionLuz -\u003e http:url:14a6186366:sensor": {
+    "class": "org.openhab.core.thing.link.ItemChannelLink",
+    "value": {
+      "channelUID": {
+        "segments": [
+          "http",
+          "url",
+          "14a6186366",
+          "sensor"
+        ],
+        "uid": "http:url:14a6186366:sensor"
+      },
+      "configuration": {
+        "properties": {
+          "transformation": "JSONPATH:$[0].luz.value"
+        }
+      },
+      "itemName": "OrionLuz"
+    }
+  },
+  "OrionNivel -\u003e http:url:14a6186366:sensor": {
+    "class": "org.openhab.core.thing.link.ItemChannelLink",
+    "value": {
+      "channelUID": {
+        "segments": [
+          "http",
+          "url",
+          "14a6186366",
+          "sensor"
+        ],
+        "uid": "http:url:14a6186366:sensor"
+      },
+      "configuration": {
+        "properties": {
+          "transformation": "JSONPATH:$[0].nivel.value"
+        }
+      },
+      "itemName": "OrionNivel"
+    }
+  },
+  "OrionTemperaturaC -\u003e http:url:14a6186366:sensor": {
+    "class": "org.openhab.core.thing.link.ItemChannelLink",
+    "value": {
+      "channelUID": {
+        "segments": [
+          "http",
+          "url",
+          "14a6186366",
+          "sensor"
+        ],
+        "uid": "http:url:14a6186366:sensor"
+      },
+      "configuration": {
+        "properties": {
+          "transformation": "JSONPATH:$[0].temperatura_C.value"
+        }
+      },
+      "itemName": "OrionTemperaturaC"
+    }
+  },
+  "OrionTemperaturaF -\u003e http:url:14a6186366:sensor": {
+    "class": "org.openhab.core.thing.link.ItemChannelLink",
+    "value": {
+      "channelUID": {
+        "segments": [
+          "http",
+          "url",
+          "14a6186366",
+          "sensor"
+        ],
+        "uid": "http:url:14a6186366:sensor"
+      },
+      "configuration": {
+        "properties": {
+          "transformation": "JSONPATH:$[0].temperatura_F.value"
+        }
+      },
+      "itemName": "OrionTemperaturaF"
+    }
+  }
+}

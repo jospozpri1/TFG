@@ -1,0 +1,216 @@
+{
+  "Limites": {
+    "class": "org.openhab.core.ui.components.RootUIComponent",
+    "value": {
+      "uid": "Limites",
+      "tags": [],
+      "props": {
+        "parameters": [],
+        "parameterGroups": []
+      },
+      "timestamp": "Apr 14, 2025, 8:30:08 PM",
+      "component": "oh-layout-page",
+      "config": {
+        "icon": "f7:settings",
+        "label": "Limites de Riego y Consumo"
+      },
+      "slots": {
+        "canvas": [],
+        "default": [
+          {
+            "component": "oh-block",
+            "config": {},
+            "slots": {
+              "default": [
+                {
+                  "component": "oh-setpoint-card",
+                  "config": {
+                    "item": "LimiteConsumoAguaMax",
+                    "max": 100.0,
+                    "min": 0.0,
+                    "step": 1.0,
+                    "title": "Consumo Agua Máx",
+                    "unit": "L"
+                  }
+                },
+                {
+                  "component": "oh-text-input-card",
+                  "config": {
+                    "item": "LimiteHorasRiego",
+                    "title": "Horas de Riego"
+                  }
+                },
+                {
+                  "component": "oh-setpoint-card",
+                  "config": {
+                    "item": "LimiteHumedadAmbMin",
+                    "max": 100.0,
+                    "min": 0.0,
+                    "step": 1.0,
+                    "title": "Humedad Ambiental Mín",
+                    "unit": "%"
+                  }
+                },
+                {
+                  "component": "oh-setpoint-card",
+                  "config": {
+                    "item": "LimiteHumedadAmbMax",
+                    "max": 100.0,
+                    "min": 0.0,
+                    "step": 1.0,
+                    "title": "Humedad Ambiental Máx",
+                    "unit": "%"
+                  }
+                },
+                {
+                  "component": "oh-setpoint-card",
+                  "config": {
+                    "item": "LimiteHumedadSueloMin",
+                    "max": 100.0,
+                    "min": 0.0,
+                    "step": 1.0,
+                    "title": "Humedad Suelo Mín",
+                    "unit": "%"
+                  }
+                },
+                {
+                  "component": "oh-setpoint-card",
+                  "config": {
+                    "item": "LimiteHumedadSueloMax",
+                    "max": 100.0,
+                    "min": 0.0,
+                    "step": 1.0,
+                    "title": "Humedad Suelo Máx",
+                    "unit": "%"
+                  }
+                },
+                {
+                  "component": "oh-setpoint-card",
+                  "config": {
+                    "item": "LimiteLuzMin",
+                    "max": 1000.0,
+                    "min": 0.0,
+                    "step": 10.0,
+                    "title": "Luz Mínima",
+                    "unit": "lux"
+                  }
+                },
+                {
+                  "component": "oh-setpoint-card",
+                  "config": {
+                    "item": "LimiteLuzMax",
+                    "max": 1000.0,
+                    "min": 0.0,
+                    "step": 10.0,
+                    "title": "Luz Máxima",
+                    "unit": "lux"
+                  }
+                },
+                {
+                  "component": "oh-setpoint-card",
+                  "config": {
+                    "item": "LimiteTempMin",
+                    "max": 50.0,
+                    "min": -10.0,
+                    "step": 1.0,
+                    "title": "Temperatura Mín",
+                    "unit": "°C"
+                  }
+                },
+                {
+                  "component": "oh-setpoint-card",
+                  "config": {
+                    "item": "LimiteTempMax",
+                    "max": 50.0,
+                    "min": -10.0,
+                    "step": 1.0,
+                    "title": "Temperatura Máx",
+                    "unit": "°C"
+                  }
+                },
+                {
+                  "component": "oh-setpoint-card",
+                  "config": {
+                    "item": "LimiteVolumenAguaMin",
+                    "max": 100.0,
+                    "min": 0.0,
+                    "step": 1.0,
+                    "title": "Volumen Agua Mín",
+                    "unit": "L"
+                  }
+                }
+              ]
+            }
+          }
+        ],
+        "grid": [],
+        "masonry": []
+      }
+    }
+  },
+  "PanelControl": {
+    "class": "org.openhab.core.ui.components.RootUIComponent",
+    "value": {
+      "uid": "PanelControl",
+      "tags": [],
+      "props": {
+        "parameters": [],
+        "parameterGroups": []
+      },
+      "timestamp": "Apr 14, 2025, 8:08:34 PM",
+      "component": "oh-layout-page",
+      "config": {
+        "label": "PanelControl "
+      },
+      "slots": {
+        "canvas": [],
+        "default": [
+          {
+            "component": "oh-block",
+            "config": {},
+            "slots": {
+              "default": [
+                {
+                  "component": "oh-setpoint-card",
+                  "config": {
+                    "item": "LimiteConsumoAguaMax",
+                    "max": 100.0,
+                    "min": 0.0,
+                    "sendButton": true,
+                    "step": 1.0,
+                    "title": "Consumo Agua Máx",
+                    "unit": "L"
+                  }
+                }
+              ]
+            }
+          }
+        ],
+        "grid": [],
+        "masonry": []
+      }
+    }
+  },
+  "overview": {
+    "class": "org.openhab.core.ui.components.RootUIComponent",
+    "value": {
+      "uid": "overview",
+      "tags": [],
+      "props": {
+        "parameters": [],
+        "parameterGroups": []
+      },
+      "timestamp": "Apr 14, 2025, 7:58:48 PM",
+      "component": "oh-layout-page",
+      "config": {
+        "label": "Overview"
+      },
+      "slots": {
+        "canvas": [],
+        "default": [],
+        "grid": [],
+        "masonry": []
+      }
+    }
+  }
+}

@@ -1,0 +1,67 @@
+{
+  "PanelControl": {
+    "class": "org.openhab.core.ui.components.RootUIComponent",
+    "value": {
+      "uid": "PanelControl",
+      "tags": [],
+      "props": {
+        "parameters": [],
+        "parameterGroups": []
+      },
+      "timestamp": "Apr 14, 2025, 8:08:34 PM",
+      "component": "oh-layout-page",
+      "config": {
+        "label": "PanelControl "
+      },
+      "slots": {
+        "canvas": [],
+        "default": [
+          {
+            "component": "oh-block",
+            "config": {},
+            "slots": {
+              "default": [
+                {
+                  "component": "oh-setpoint-card",
+                  "config": {
+                    "item": "LimiteConsumoAguaMax",
+                    "max": 100.0,
+                    "min": 0.0,
+                    "sendButton": true,
+                    "step": 1.0,
+                    "title": "Consumo Agua Máx",
+                    "unit": "L"
+                  }
+                }
+              ]
+            }
+          }
+        ],
+        "grid": [],
+        "masonry": []
+      }
+    }
+  },
+  "overview": {
+    "class": "org.openhab.core.ui.components.RootUIComponent",
+    "value": {
+      "uid": "overview",
+      "tags": [],
+      "props": {
+        "parameters": [],
+        "parameterGroups": []
+      },
+      "timestamp": "Apr 14, 2025, 7:58:48 PM",
+      "component": "oh-layout-page",
+      "config": {
+        "label": "Overview"
+      },
+      "slots": {
+        "canvas": [],
+        "default": [],
+        "grid": [],
+        "masonry": []
+      }
+    }
+  }
+}

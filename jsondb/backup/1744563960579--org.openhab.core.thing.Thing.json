@@ -1,0 +1,135 @@
+{
+  "http:url:14a6186366": {
+    "class": "org.openhab.core.thing.internal.ThingStorageEntity",
+    "value": {
+      "isBridge": false,
+      "channels": [
+        {
+          "uid": "http:url:14a6186366:last-failure",
+          "id": "last-failure",
+          "channelTypeUID": "http:request-date-time",
+          "itemType": "DateTime",
+          "kind": "STATE",
+          "label": "Last Failure",
+          "defaultTags": [],
+          "properties": {},
+          "configuration": {}
+        },
+        {
+          "uid": "http:url:14a6186366:last-success",
+          "id": "last-success",
+          "channelTypeUID": "http:request-date-time",
+          "itemType": "DateTime",
+          "kind": "STATE",
+          "label": "Last Success",
+          "defaultTags": [],
+          "properties": {},
+          "configuration": {}
+        },
+        {
+          "uid": "http:url:14a6186366:sensor",
+          "id": "sensor",
+          "channelTypeUID": "http:string",
+          "itemType": "String",
+          "kind": "STATE",
+          "label": "/v2/entities",
+          "description": "",
+          "defaultTags": [],
+          "properties": {},
+          "configuration": {
+            "headers": "Accept\u003dapplication/json",
+            "method": "GET",
+            "path": "/v2/entities"
+          }
+        },
+        {
+          "uid": "http:url:14a6186366:sensor_copy",
+          "id": "sensor_copy",
+          "channelTypeUID": "http:string",
+          "itemType": "String",
+          "kind": "STATE",
+          "label": "/v2/entities/MotorData1",
+          "description": "",
+          "defaultTags": [],
+          "properties": {},
+          "configuration": {
+            "headers": "Accept\u003dapplication/json",
+            "method": "GET",
+            "path": "/v2/entities/MotorData1/attrs"
+          }
+        }
+      ],
+      "label": "HTTP_Orion",
+      "configuration": {
+        "authMode": "BASIC",
+        "baseURL": "http://localhost:1026",
+        "bufferSize": 2048,
+        "commandMethod": "GET",
+        "contentType": "application/json",
+        "delay": 0,
+        "ignoreSSLErrors": false,
+        "path": "/v2/entities",
+        "refresh": 30,
+        "stateMethod": "GET",
+        "timeout": 3000
+      },
+      "properties": {
+        "thingTypeVersion": "2"
+      },
+      "UID": "http:url:14a6186366",
+      "thingTypeUID": "http:url",
+      "location": "Loft"
+    }
+  },
+  "http:url:fiware_motor": {
+    "class": "org.openhab.core.thing.internal.ThingStorageEntity",
+    "value": {
+      "isBridge": false,
+      "channels": [
+        {
+          "uid": "http:url:fiware_motor:last-failure",
+          "id": "last-failure",
+          "channelTypeUID": "http:request-date-time",
+          "itemType": "DateTime",
+          "kind": "STATE",
+          "label": "Last Failure",
+          "defaultTags": [],
+          "properties": {},
+          "configuration": {}
+        },
+        {
+          "uid": "http:url:fiware_motor:last-success",
+          "id": "last-success",
+          "channelTypeUID": "http:request-date-time",
+          "itemType": "DateTime",
+          "kind": "STATE",
+          "label": "Last Success",
+          "defaultTags": [],
+          "properties": {},
+          "configuration": {}
+        }
+      ],
+      "label": "FIWARE MotorData1",
+      "configuration": {
+        "authMode": "BASIC",
+        "baseURL": "http://192.168.1.113:1026/v2/entities/MotorData1",
+        "bufferSize": 2048,
+        "commandMethod": "GET",
+        "delay": 0,
+        "headers": [
+          "Fiware-Service\u003dopenhab",
+          "Fiware-ServicePath\u003d/"
+        ],
+        "ignoreSSLErrors": false,
+        "refresh": 30,
+        "stateMethod": "GET",
+        "timeout": 3000
+      },
+      "properties": {
+        "thingTypeVersion": "2"
+      },
+      "UID": "http:url:fiware_motor",
+      "thingTypeUID": "http:url"
+    }
+  }
+}

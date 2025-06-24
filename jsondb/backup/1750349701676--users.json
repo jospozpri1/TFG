@@ -1,0 +1,46 @@
+{
+  "pozo": {
+    "class": "org.openhab.core.auth.ManagedUser",
+    "value": {
+      "name": "pozo",
+      "passwordHash": "tm9NGua7QOgbnIBQ8sFx8OqplbDpLbKKSAl6UdEk8I1lOPDf1dLfe82BS5Swzc+glhtJIyufXPjfnIYFveilTA\u003d\u003d",
+      "passwordSalt": "npMGmLhi+d3pWtB0Xh+PcViuGw3bMadq9bo3v5RDelcldfObFmGL53861PIHOI57miYAseiLIeFy7H/wNlnUYg\u003d\u003d",
+      "roles": [
+        "administrator"
+      ],
+      "sessions": [
+        {
+          "sessionId": "41eba8a1-12a0-434d-aedc-02fd46156832",
+          "refreshToken": "57bf5ad9bad04af6984f08de36d1d697",
+          "createdTime": "Feb 15, 2025, 1:39:52 PM",
+          "lastRefreshTime": "Feb 15, 2025, 1:39:52 PM",
+          "clientId": "http://192.168.1.118:8080",
+          "redirectUri": "http://192.168.1.118:8080",
+          "scope": "admin",
+          "sessionCookie": true
+        },
+        {
+          "sessionId": "94a3fb7e-6538-441a-bd28-99418b430f3c",
+          "refreshToken": "b4f69a46972441e9a27229ebdf78dc65",
+          "createdTime": "Mar 7, 2025, 11:35:59 AM",
+          "lastRefreshTime": "Jun 19, 2025, 6:15:01 PM",
+          "clientId": "http://localhost:8080",
+          "redirectUri": "http://localhost:8080",
+          "scope": "admin",
+          "sessionCookie": true
+        },
+        {
+          "sessionId": "52a8d0ad-4dc7-45b8-bb41-c07226d67c75",
+          "refreshToken": "0faa5eb8d3034ef19753b95719c1fc6b",
+          "createdTime": "Apr 15, 2025, 1:48:57 PM",
+          "lastRefreshTime": "Apr 15, 2025, 1:48:57 PM",
+          "clientId": "http://localhost:8080",
+          "redirectUri": "http://localhost:8080",
+          "scope": "admin",
+          "sessionCookie": true
+        }
+      ],
+      "apiTokens": []
+    }
+  }
+}

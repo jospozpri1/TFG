@@ -1,0 +1,6 @@
+{
+  "http:url:fiware_motor": {
+    "class": "java.lang.String",
+    "value": ""
+  }
+}

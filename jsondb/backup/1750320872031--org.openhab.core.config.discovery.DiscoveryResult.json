@@ -1,0 +1,176 @@
+{
+  "androiddebugbridge:android:3886f7ccc36d": {
+    "class": "org.openhab.core.config.discovery.internal.DiscoveryResultImpl",
+    "value": {
+      "thingUID": {
+        "segments": [
+          "androiddebugbridge",
+          "android",
+          "3886f7ccc36d"
+        ],
+        "uid": "androiddebugbridge:android:3886f7ccc36d"
+      },
+      "thingTypeUID": {
+        "segments": [
+          "androiddebugbridge",
+          "android"
+        ],
+        "uid": ""
+      },
+      "properties": {
+        "ip": "[fe80:0:0:0:909c:94ff:fe4b:596e]",
+        "macAddress": "38:86:f7:cc:c3:6d"
+      },
+      "representationProperty": "macAddress",
+      "flag": "NEW",
+      "label": "Salón ([fe80:0:0:0:909c:94ff:fe4b:596e])",
+      "timestamp": "2025-06-19T08:14:31.528521Z",
+      "timeToLive": -1
+    }
+  },
+  "androiddebugbridge:android:481b40023852": {
+    "class": "org.openhab.core.config.discovery.internal.DiscoveryResultImpl",
+    "value": {
+      "thingUID": {
+        "segments": [
+          "androiddebugbridge",
+          "android",
+          "481b40023852"
+        ],
+        "uid": "androiddebugbridge:android:481b40023852"
+      },
+      "thingTypeUID": {
+        "segments": [
+          "androiddebugbridge",
+          "android"
+        ],
+        "uid": ""
+      },
+      "properties": {
+        "ip": "192.168.1.129",
+        "macAddress": "48:1b:40:02:38:52"
+      },
+      "representationProperty": "macAddress",
+      "flag": "NEW",
+      "label": "TV del salón (192.168.1.129)",
+      "timestamp": "2025-03-11T12:39:59.172121600Z",
+      "timeToLive": -1
+    }
+  },
+  "androidtv:googletv:3886F7CCC36D": {
+    "class": "org.openhab.core.config.discovery.internal.DiscoveryResultImpl",
+    "value": {
+      "thingUID": {
+        "segments": [
+          "androidtv",
+          "googletv",
+          "3886F7CCC36D"
+        ],
+        "uid": "androidtv:googletv:3886F7CCC36D"
+      },
+      "thingTypeUID": {
+        "segments": [
+          "androidtv",
+          "googletv"
+        ],
+        "uid": ""
+      },
+      "properties": {
+        "ipAddress": "192.168.1.114"
+      },
+      "representationProperty": "ipAddress",
+      "flag": "NEW",
+      "label": "Salón (3886F7CCC36D)",
+      "timestamp": "2025-06-19T07:40:34.776849400Z",
+      "timeToLive": -1
+    }
+  },
+  "androidtv:googletv:481B40023852": {
+    "class": "org.openhab.core.config.discovery.internal.DiscoveryResultImpl",
+    "value": {
+      "thingUID": {
+        "segments": [
+          "androidtv",
+          "googletv",
+          "481B40023852"
+        ],
+        "uid": "androidtv:googletv:481B40023852"
+      },
+      "thingTypeUID": {
+        "segments": [
+          "androidtv",
+          "googletv"
+        ],
+        "uid": ""
+      },
+      "properties": {
+        "ipAddress": "192.168.1.129"
+      },
+      "representationProperty": "ipAddress",
+      "flag": "NEW",
+      "label": "TV del salón (481B40023852)",
+      "timestamp": "2025-03-11T12:39:59.180113800Z",
+      "timeToLive": -1
+    }
+  },
+  "chromecast:chromecast:5dfc9e577c6da4dbf1ddf1b85275ab4c": {
+    "class": "org.openhab.core.config.discovery.internal.DiscoveryResultImpl",
+    "value": {
+      "thingUID": {
+        "segments": [
+          "chromecast",
+          "chromecast",
+          "5dfc9e577c6da4dbf1ddf1b85275ab4c"
+        ],
+        "uid": "chromecast:chromecast:5dfc9e577c6da4dbf1ddf1b85275ab4c"
+      },
+      "thingTypeUID": {
+        "segments": [
+          "chromecast",
+          "chromecast"
+        ],
+        "uid": ""
+      },
+      "properties": {
+        "deviceId": "5dfc9e577c6da4dbf1ddf1b85275ab4c",
+        "ipAddress": "192.168.1.114",
+        "port": 8009
+      },
+      "representationProperty": "deviceId",
+      "flag": "NEW",
+      "label": "Salón",
+      "timestamp": "2025-06-19T08:07:36.609177Z",
+      "timeToLive": -1
+    }
+  },
+  "chromecast:chromecast:fe068b8a87c412ad2db5da5407a6d772": {
+    "class": "org.openhab.core.config.discovery.internal.DiscoveryResultImpl",
+    "value": {
+      "thingUID": {
+        "segments": [
+          "chromecast",
+          "chromecast",
+          "fe068b8a87c412ad2db5da5407a6d772"
+        ],
+        "uid": "chromecast:chromecast:fe068b8a87c412ad2db5da5407a6d772"
+      },
+      "thingTypeUID": {
+        "segments": [
+          "chromecast",
+          "chromecast"
+        ],
+        "uid": ""
+      },
+      "properties": {
+        "deviceId": "fe068b8a87c412ad2db5da5407a6d772",
+        "ipAddress": "192.168.1.129",
+        "port": 8009
+      },
+      "representationProperty": "deviceId",
+      "flag": "NEW",
+      "label": "TV del salón",
+      "timestamp": "2025-03-11T13:00:26.953496800Z",
+      "timeToLive": -1
+    }
+  }
+}

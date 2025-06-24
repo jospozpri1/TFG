@@ -1,0 +1,354 @@
+{
+  "39ef94bd47": {
+    "class": "org.openhab.core.automation.dto.RuleDTO",
+    "value": {
+      "triggers": [],
+      "conditions": [],
+      "actions": [
+        {
+          "inputs": {},
+          "id": "script",
+          "configuration": {
+            "script": "\nvar response \u003d actions.HTTP.sendHttpGetRequest(\u0027http://localhost:1026/v2/entities\u0027, 3000);\nconsole.log(response)\n        // Convertir la respuesta JSON en un objeto\n        var json \u003d JSON.parse(response)\n\n        // Extraer los valores del JSON\n        var humedadAmbiental \u003d json[0].humedad_ambiental.value\n        var humedadSuelo \u003d json[0].humedad_suelo.value\n        var luz \u003d json[0].luz.value\n        var temperaturaC \u003d json[0].temperatura_C.value\n        var nivel\u003d json[0].nivel.value\n        var temperaturaF \u003d json[0].temperatura_F.value\n\n        // Actualizar los ítems con los valores extraídos\n        items.OrionHumedadAmbiental.postUpdate(humedadAmbiental)\n        items.OrionHumedadSuelo.postUpdate(humedadSuelo)\n        items.OrionLuz.postUpdate(luz)\n        items.OrionTemperaturaC.postUpdate(temperaturaC)\n        items.OrionTemperaturaF.postUpdate(temperaturaF)\n        items.OrionNivel.postUpdate(nivel)\n        // Log para depuración\n        console.log(\"Datos actualizados correctamente: \" +\n            \"Humedad Ambiental\u003d\" + humedadAmbiental + \", \" +\n            \"Humedad Suelo\u003d\" + humedadSuelo + \", \" +\n            \"Nivel\u003d\" + nivel + \", \" +\n            \"Luz\u003d\" + luz + \", \" +\n            \"Temperatura\u003d\" + temperaturaC + \"~\"+ temperaturaF)",
+            "type": "application/javascript"
+          },
+          "type": "script.ScriptAction"
+        }
+      ],
+      "configuration": {},
+      "configDescriptions": [],
+      "uid": "39ef94bd47",
+      "name": "leer",
+      "tags": [
+        "Script"
+      ],
+      "visibility": "VISIBLE",
+      "description": ""
+    }
+  },
+  "488ffb0625": {
+    "class": "org.openhab.core.automation.dto.RuleDTO",
+    "value": {
+      "triggers": [
+        {
+          "id": "1",
+          "configuration": {
+            "cronExpression": "0/30 * * * * ? *"
+          },
+          "type": "timer.GenericCronTrigger"
+        }
+      ],
+      "conditions": [],
+      "actions": [
+        {
+          "inputs": {},
+          "id": "2",
+          "configuration": {
+            "script": "var url\u003d\"http://localhost:1026/v2/entities/MotorData1/attrs\";  var response \u003d actions.HTTP.sendHttpGetRequest(url,3000);\n\n  // Verificamos si la respuesta es válida \n  if (response \u003d\u003d\u003d null ||response.isEmpty()) {\n    console.error(\"No se recibió respuesta de Fiware\");\n  } else {\n    // Procesamos la respuesta JSON\n    try {\n      // Convertimos la respuesta JSON en un objeto\n      var json \u003d JSON.parse(response);\n\n      // Extraemos el valor del atributo \"estado\"\n      var estadoMotor \u003d json.estado.value;\n\n      // Actualizamos el ítem en OpenHAB\n      items.MotorEstado.postUpdate(estadoMotor ? \"ON\" : \"OFF\");\n\n      console.log(\"Estado del motor actualizado: \" + (estadoMotor ? \"ON\" : \"OFF\"));\n    } catch (e) {\n      console.error(\"Error al procesar la respuesta JSON: \" + e.message);\n    }\n  }",
+            "type": "application/javascript"
+          },
+          "type": "script.ScriptAction"
+        },
+        {
+          "inputs": {},
+          "id": "3",
+          "configuration": {
+            "script": "var response \u003d\n        actions.HTTP.sendHttpGetRequest(\u0027http://localhost:1026/v2/entities\u0027,\n        3000);\n\n        console.log(response)\n                var json \u003d JSON.parse(response)\n\n                var humedadAmbiental \u003d json[0].humedad_ambiental.value\n                var humedadSuelo \u003d json[0].humedad_suelo.value\n                var luz \u003d json[0].luz.value\n                var temperaturaC \u003d json[0].temperatura_C.value\n                var nivel\u003d json[0].nivel.value\n                var temperaturaF \u003d json[0].temperatura_F.value\n\n                items.OrionHumedadAmbiental.postUpdate(humedadAmbiental)\n                items.OrionHumedadSuelo.postUpdate(humedadSuelo)\n                items.OrionLuz.postUpdate(luz)\n                items.OrionTemperaturaC.postUpdate(temperaturaC)\n                items.OrionTemperaturaF.postUpdate(temperaturaF)\n                items.OrionNivel.postUpdate(nivel)\n                console.log(\"Datos actualizados correctamente: \" +\n                    \"Humedad Ambiental\u003d\" + humedadAmbiental + \", \" +\n                    \"Humedad Suelo\u003d\" + humedadSuelo + \", \" +\n                    \"Nivel\u003d\" + nivel + \", \" +\n                    \"Luz\u003d\" + luz + \", \" +\n                    \"Temperatura\u003d\" + temperaturaC + \"~\"+ temperaturaF)",
+            "type": "application/javascript"
+          },
+          "type": "script.ScriptAction"
+        },
+        {
+          "inputs": {},
+          "id": "4",
+          "configuration": {
+            "script": "var url \u003d \"http://localhost:1026/v2/entities/Luces/attrs\";\n        var response \u003d actions.HTTP.sendHttpGetRequest(url, 3000);\n        \n        if (response \u003d\u003d\u003d null || response.isEmpty()) {\n          console.error(\"No se recibió respuesta de fiware para las luces\");\n        } else {\n          try {\n            var json \u003d JSON.parse(response);\n            var estadoLuces \u003d json.estado.value;\n            items.LucesEstado.postUpdate(estadoLuces ? \"ON\" : \"OFF\");\n            console.log(\"Estado de las luces actualizado: \" + (estadoLuces ? \"ON\" : \"OFF\"));\n          } catch (e) {\n            console.error(\"Error al procesar la respuesta JSON de las luces: \" + e.message);\n          }\n        }",
+            "type": "application/javascript"
+          },
+          "type": "script.ScriptAction"
+        },
+        {
+          "inputs": {},
+          "id": "5",
+          "configuration": {
+            "script": " var url \u003d\n\"http://localhost:1026/v2/entities/AireAcondicionado/attrs\";\n        var response \u003d actions.HTTP.sendHttpGetRequest(url, 3000);\n        if (response \u003d\u003d\u003d null || response.isEmpty()) {\n          console.error(\"No se recibió respuesta de fiware para el aire\");\n        } else {\n          try {\n            var json \u003d JSON.parse(response);\n            var estadoAire \u003d json.estado.value;\n            items.AireEstado.postUpdate(estadoAire ? \"ON\" : \"OFF\");\n            console.log(\"Estado del aire actualizado: \" + (estadoAire ? \"ON\" : \"OFF\"));\n          } catch (e) {\n            console.error(\"Error al procesar la respuesta JSON del aire: \" + e.message);\n          }\n        }\n",
+            "type": "application/javascript"
+          },
+          "type": "script.ScriptAction"
+        }
+      ],
+      "configuration": {},
+      "configDescriptions": [],
+      "uid": "488ffb0625",
+      "name": "Lectura_Elementos",
+      "tags": [],
+      "visibility": "VISIBLE"
+    }
+  },
+  "78e23b4fa3": {
+    "class": "org.openhab.core.automation.dto.RuleDTO",
+    "value": {
+      "triggers": [
+        {
+          "id": "1",
+          "configuration": {
+            "itemName": "LucesEstado"
+          },
+          "type": "core.ItemCommandTrigger"
+        }
+      ],
+      "conditions": [],
+      "actions": [
+        {
+          "inputs": {},
+          "id": "2",
+          "configuration": {
+            "script": "var url \u003d \"http://localhost:1026/v2/entities/Luces/attrs/estado\";\nvar estadoLuces \u003d items.LucesEstado.state \u003d\u003d\u003d \"ON\";   \nvar body \u003d\u0027{\"value\": \u0027 + estadoLuces + \n                   \u0027, \"metadata\": {\u0027 +\n                   \u0027\"origen\": {\"value\": \"openhab\"}\u0027 +\n                   \u0027}}\u0027;  var response \u003d actions.HTTP.sendHttpPutRequest(url,\u0027application/json\u0027,  body, 3000);\n\n\n console.log(\"Estado de las luces enviado a Fiware: \" + items.LucesEstado.state);",
+            "type": "application/javascript"
+          },
+          "type": "script.ScriptAction"
+        }
+      ],
+      "configuration": {},
+      "configDescriptions": [],
+      "uid": "78e23b4fa3",
+      "name": "AccionarLuces",
+      "tags": [],
+      "visibility": "VISIBLE"
+    }
+  },
+  "83003273ab": {
+    "class": "org.openhab.core.automation.dto.RuleDTO",
+    "value": {
+      "triggers": [
+        {
+          "id": "1",
+          "configuration": {
+            "itemName": "MotorEstado"
+          },
+          "type": "core.ItemCommandTrigger"
+        }
+      ],
+      "conditions": [],
+      "actions": [
+        {
+          "inputs": {},
+          "id": "2",
+          "configuration": {
+            "script": "var url \u003d \"http://localhost:1026/v2/entities/MotorData1/attrs\";\nvar estadoMotor \u003d items.MotorEstado.state \u003d\u003d\u003d \"ON\";\nvar body \u003d JSON.stringify({\n  \"estado\": {\n    \"value\": estadoMotor,\n    \"metadata\": {\n      \"origen\": {\"value\": \"openhab\"}\n    }\n  }\n});\nvar response \u003d actions.HTTP.sendHttpPostRequest(url, \u0027application/json\u0027, body, 3000);",
+            "type": "application/javascript"
+          },
+          "type": "script.ScriptAction"
+        }
+      ],
+      "configuration": {},
+      "configDescriptions": [],
+      "uid": "83003273ab",
+      "name": "Accionar Motor",
+      "tags": [],
+      "visibility": "VISIBLE"
+    }
+  },
+  "ActualizarLimites": {
+    "class": "org.openhab.core.automation.dto.RuleDTO",
+    "value": {
+      "triggers": [
+        {
+          "id": "2",
+          "configuration": {
+            "itemName": "LimiteConsumoAguaMax"
+          },
+          "type": "core.ItemStateUpdateTrigger"
+        },
+        {
+          "id": "3",
+          "configuration": {
+            "itemName": "LimiteHorasRiego"
+          },
+          "type": "core.ItemStateUpdateTrigger"
+        },
+        {
+          "id": "4",
+          "configuration": {
+            "itemName": "LimiteHumedadAmbMin"
+          },
+          "type": "core.ItemStateUpdateTrigger"
+        },
+        {
+          "id": "5",
+          "configuration": {
+            "itemName": "LimiteHumedadAmbMax"
+          },
+          "type": "core.ItemStateUpdateTrigger"
+        },
+        {
+          "id": "6",
+          "configuration": {
+            "itemName": "LimiteHumedadSueloMin"
+          },
+          "type": "core.ItemStateUpdateTrigger"
+        },
+        {
+          "id": "7",
+          "configuration": {
+            "itemName": "LimiteHumedadSueloMax"
+          },
+          "type": "core.ItemStateUpdateTrigger"
+        },
+        {
+          "id": "8",
+          "configuration": {
+            "itemName": "LimiteLuzMin"
+          },
+          "type": "core.ItemStateUpdateTrigger"
+        },
+        {
+          "id": "9",
+          "configuration": {
+            "itemName": "LimiteLuzMax"
+          },
+          "type": "core.ItemStateUpdateTrigger"
+        },
+        {
+          "id": "10",
+          "configuration": {
+            "itemName": "LimiteTempMin"
+          },
+          "type": "core.ItemStateUpdateTrigger"
+        },
+        {
+          "id": "11",
+          "configuration": {
+            "itemName": "LimiteTempMax"
+          },
+          "type": "core.ItemStateUpdateTrigger"
+        },
+        {
+          "id": "12",
+          "configuration": {
+            "itemName": "LimiteVolumenAguaMin"
+          },
+          "type": "core.ItemStateUpdateTrigger"
+        }
+      ],
+      "conditions": [],
+      "actions": [
+        {
+          "inputs": {},
+          "id": "1",
+          "configuration": {
+            "script": "var URL \u003d \"http://localhost:1026/v2/entities/Limites:1/attrs\";\n// 1. Primero obtenemos la entidad completa para verificar los metadatos \nvar response \u003d actions.HTTP.sendHttpGetRequest(\u0027http://localhost:1026/v2/entities/Limites:1?options\u003dkeyValues\u0027, 3000); var entity \u003d JSON.parse(response); \n// 2. Función para verificar si debemos ignorar la actualización por los metadatos\nfunction debeIgnorarActualizacion() {\n// Lista de los atributos a verificar\n    var atributos \u003d [\"temp_min\", \"temp_max\", \"humedad_amb_min\", \"humedad_amb_max\", \n                    \"humedad_suelo_min\", \"humedad_suelo_max\", \"luz_min\", \"luz_max\",\n                    \"consumo_agua_max\", \"volumen_agua_min\", \"horas_riego\"];\n    // Verificamos si TODOS los atributos tienen origen \"openhab\"\n    for (var i \u003d 0; i \u003c atributos.length; i++) {\n        var attr \u003d atributos[i];\n        if (!entity[attr] || !entity[attr].metadata || entity[attr].metadata.origen.value !\u003d\u003d \"openhab\") {\n            return false; \n        }\n    }\n    return true; \n} // 3. Hacemos la verificación inicial \n\nif (debeIgnorarActualizacion()) {\n    console.log(\"REGLA\", \"Ignorando actualización porque los cambios provienen de openhab\");\n} else {\n    // 4. Obtenemos los valores actuales de los items\n    var tempMin \u003d parseFloat(items.getItem(\"LimiteTempMin\").state);\n    var tempMax \u003d parseFloat(items.getItem(\"LimiteTempMax\").state);\n    var humedadAmbMin \u003d parseFloat(items.getItem(\"LimiteHumedadAmbMin\").state);\n    var humedadAmbMax \u003d parseFloat(items.getItem(\"LimiteHumedadAmbMax\").state);\n    var humedadSueloMin \u003d parseFloat(items.getItem(\"LimiteHumedadSueloMin\").state);\n    var humedadSueloMax \u003d parseFloat(items.getItem(\"LimiteHumedadSueloMax\").state);\n    var luzMin \u003d parseFloat(items.getItem(\"LimiteLuzMin\").state);\n    var luzMax \u003d parseFloat(items.getItem(\"LimiteLuzMax\").state);\n    var consumoAguaMax \u003d parseFloat(items.getItem(\"LimiteConsumoAguaMax\").state);\n    var volumenAguaMin \u003d parseFloat(items.getItem(\"LimiteVolumenAguaMin\").state);\n    var horasRiegoRaw \u003d items.getItem(\"LimiteHorasRiego\").state;\n    var horasRiego \u003d JSON.parse(horasRiegoRaw);\n    var error \u003d 0;\n    // 5.Hacemos las validaciones de los datos\n    if (tempMin \u003e\u003d tempMax) {\n        console.log(\"REGLA\", \"La temperatura mínima debe ser menor que la máxima\");\n        error \u003d 1;\n   }\n    if (humedadAmbMin \u003e\u003d humedadAmbMax || humedadAmbMin \u003c 0 || humedadAmbMax \u003e 100) {\n        console.log(\"REGLA\", \"La humedad ambiental debe ser válida (0-100%) y min \u003c max\");\n        error \u003d 1;\n    }\n    if (humedadSueloMin \u003e\u003d humedadSueloMax || humedadSueloMin \u003c 0 || humedadSueloMax \u003e 100) {\n        console.log(\"REGLA\", \"La humedad del suelo debe ser válida (0-100%) y min \u003c max\");\n        error \u003d 1;\n    }\n    if (luzMin \u003e\u003d luzMax || luzMin \u003c 0 || luzMax \u003e 100) {\n        console.log(\"REGLA\", \"La luz debe ser válida (0-100%) y min \u003c max\");\n        error \u003d 1;\n    }\n    if (consumoAguaMax \u003c\u003d 0) {\n        console.log(\"REGLA\", \"El consumo máximo de agua debe ser mayor que cero\");\n        error \u003d 1;\n    }\n    if (volumenAguaMin \u003c 0 || volumenAguaMin \u003e 100) {\n        console.log(\"REGLA\", \"El volumen mínimo de agua debe estar entre 0 y 100%\");\n        error \u003d 1;\n    }\n    if (!horasRiego || horasRiego.length \u003d\u003d\u003d 0) {\n        console.log(\"REGLA\", \"Debe especificar al menos una hora de riego permitida\");\n        error \u003d 1;\n    }\n    // 6. Si no hay errores, procedemos con la actualización\n    if (error \u003d\u003d 0) {\n        // Función para crear la estructura de atributo con metadatos\n        function crearAtributo(valor, tipo) {\n            return {\n                \"type\": tipo || \"Number\",\n                \"value\": valor,\n                \"metadata\": {\n                    \"origen\": {\n                        \"value\": \"openhab\",\n                        \"type\": \"Text\"\n                    }\n                }\n            };\n        }\n        var body \u003d {\n            \"consumo_agua_max\": crearAtributo(consumoAguaMax),\n            \"horas_riego\": crearAtributo(horasRiego, \"StructuredValue\"),\n            \"humedad_amb_min\": crearAtributo(humedadAmbMin),\n            \"humedad_amb_max\": crearAtributo(humedadAmbMax),\n            \"humedad_suelo_min\": crearAtributo(humedadSueloMin),\n            \"humedad_suelo_max\": crearAtributo(humedadSueloMax),\n            \"luz_min\": crearAtributo(luzMin),\n            \"luz_max\": crearAtributo(luzMax),\n            \"temp_min\": crearAtributo(tempMin),\n            \"temp_max\": crearAtributo(tempMax),\n            \"volumen_agua_min\": crearAtributo(volumenAguaMin)\n        };\n        // 7. Enviamos la actualización a FIWARE\n        actions.HTTP.sendHttpPutRequest(URL, \"application/json\", JSON.stringify(body));\n    } else {\n        // 8. Manejamos los errores-Restauramoa valores anteriores\n        console.log(\"REGLA\", \"Restaurando valores anteriores debido a errores de validación\");\n                var response \u003d\n                actions.HTTP.sendHttpGetRequest(\u0027http://localhost:1026/v2/entities/Limites:1\u0027,\n                3000);\n                var json \u003d JSON.parse(response);\n                var consumoAguaMax \u003d json.consumo_agua_max.value;\n                var horasRiego \u003d JSON.stringify(json.horas_riego.value);\n                var humedadAmbMin \u003d json.humedad_amb_min.value;\n                var humedadAmbMax \u003d json.humedad_amb_max.value;\n                var humedadSueloMin \u003d json.humedad_suelo_min.value;\n                var humedadSueloMax \u003d json.humedad_suelo_max.value;\n                var luzMin \u003d json.luz_min.value;\n                var luzMax \u003d json.luz_max.value;\n                var tempMin \u003d json.temp_min.value;\n                var tempMax \u003d json.temp_max.value;\n                var volumenAguaMin \u003d json.volumen_agua_min.value;\n                items.LimiteConsumoAguaMax.postUpdate(consumoAguaMax);\n                items.LimiteHorasRiego.postUpdate(horasRiego);\n                items.LimiteHumedadAmbMin.postUpdate(humedadAmbMin);\n                items.LimiteHumedadAmbMax.postUpdate(humedadAmbMax);\n                items.LimiteHumedadSueloMin.postUpdate(humedadSueloMin);\n                items.LimiteHumedadSueloMax.postUpdate(humedadSueloMax);\n                items.LimiteLuzMin.postUpdate(luzMin);\n                items.LimiteLuzMax.postUpdate(luzMax);\n                items.LimiteTempMin.postUpdate(tempMin);\n                items.LimiteTempMax.postUpdate(tempMax);\n                items.LimiteVolumenAguaMin.postUpdate(volumenAguaMin);\n    }\n}",
+            "type": "application/javascript"
+          },
+          "type": "script.ScriptAction"
+        }
+      ],
+      "configuration": {},
+      "configDescriptions": [],
+      "uid": "ActualizarLimites",
+      "name": "ActualizarLimites",
+      "tags": [],
+      "visibility": "VISIBLE"
+    }
+  },
+  "e9925bb7be": {
+    "class": "org.openhab.core.automation.dto.RuleDTO",
+    "value": {
+      "triggers": [
+        {
+          "id": "1",
+          "configuration": {
+            "startlevel": 40.0
+          },
+          "type": "core.SystemStartlevelTrigger"
+        }
+      ],
+      "conditions": [],
+      "actions": [
+        {
+          "inputs": {},
+          "id": "2",
+          "configuration": {
+            "script": "\nvar response \u003d actions.HTTP.sendHttpGetRequest(\u0027http://localhost:1026/v2/entities\u0027, 3000);\nconsole.log(response)\n        var json \u003d JSON.parse(response)\n\n        var humedadAmbiental \u003d json[0].humedad_ambiental.value\n        var humedadSuelo \u003d json[0].humedad_suelo.value\n        var luz \u003d json[0].luz.value\n        var temperaturaC \u003d json[0].temperatura_C.value\n        var nivel\u003d json[0].nivel.value\n        var temperaturaF \u003d json[0].temperatura_F.value\n\n        items.OrionHumedadAmbiental.postUpdate(humedadAmbiental)\n        items.OrionHumedadSuelo.postUpdate(humedadSuelo)\n        items.OrionLuz.postUpdate(luz)\n        items.OrionTemperaturaC.postUpdate(temperaturaC)\n        items.OrionTemperaturaF.postUpdate(temperaturaF)\n        items.OrionNivel.postUpdate(nivel)\n        console.log(\"Datos actualizados correctamente: \" +\n            \"Humedad Ambiental\u003d\" + humedadAmbiental + \", \" +\n            \"Humedad Suelo\u003d\" + humedadSuelo + \", \" +\n            \"Nivel\u003d\" + nivel + \", \" +\n            \"Luz\u003d\" + luz + \", \" +\n            \"Temperatura\u003d\" + temperaturaC + \"~\"+ temperaturaF)",
+            "type": "application/javascript"
+          },
+          "type": "script.ScriptAction"
+        },
+        {
+          "inputs": {},
+          "id": "4",
+          "configuration": {
+            "script": "        var\nurl\u003d\"http://localhost:1026/v2/entities/MotorData1/attrs\";  var\n        response \u003d actions.HTTP.sendHttpGetRequest(url,3000);\n          if (response \u003d\u003d\u003d null ||response.isEmpty()) {\n            console.error(\"No se recibió respuesta de Fiware\");\n          } else {\n            try {\n              var json \u003d JSON.parse(response);\n              var estadoMotor \u003d json.estado.value;\n              items.MotorEstado.postUpdate(estadoMotor ? \"ON\" : \"OFF\");\n              console.log(\"Estado del motor actualizado: \" + (estadoMotor ? \"ON\" : \"OFF\"));\n            } catch (e) {\n              console.error(\"Error al procesar la respuesta JSON: \" + e.message);\n            }\n          }",
+            "type": "application/javascript"
+          },
+          "type": "script.ScriptAction"
+        },
+        {
+          "inputs": {},
+          "id": "3",
+          "configuration": {
+            "script": "var response \u003d\n        actions.HTTP.sendHttpGetRequest(\u0027http://localhost:1026/v2/entities/Limites:1\u0027,\n        3000);\n\n        console.log(response);\n\n\n        var json \u003d JSON.parse(response);\n\n\n\n        var consumoAguaMax \u003d json.consumo_agua_max.value;\n\n        var horasRiego \u003d JSON.stringify(json.horas_riego.value);\n\n        var humedadAmbMin \u003d json.humedad_amb_min.value;\n\n        var humedadAmbMax \u003d json.humedad_amb_max.value;\n\n        var humedadSueloMin \u003d json.humedad_suelo_min.value;\n\n        var humedadSueloMax \u003d json.humedad_suelo_max.value;\n\n        var luzMin \u003d json.luz_min.value;\n\n        var luzMax \u003d json.luz_max.value;\n\n        var tempMin \u003d json.temp_min.value;\n\n        var tempMax \u003d json.temp_max.value;\n\n        var volumenAguaMin \u003d json.volumen_agua_min.value;\n\n\n\n        items.LimiteConsumoAguaMax.postUpdate(consumoAguaMax);\n\n        items.LimiteHorasRiego.postUpdate(horasRiego);\n\n        items.LimiteHumedadAmbMin.postUpdate(humedadAmbMin);\n\n        items.LimiteHumedadAmbMax.postUpdate(humedadAmbMax);\n\n        items.LimiteHumedadSueloMin.postUpdate(humedadSueloMin);\n\n        items.LimiteHumedadSueloMax.postUpdate(humedadSueloMax);\n\n        items.LimiteLuzMin.postUpdate(luzMin);\n\n        items.LimiteLuzMax.postUpdate(luzMax);\n\n        items.LimiteTempMin.postUpdate(tempMin);\n\n        items.LimiteTempMax.postUpdate(tempMax);\n\n        items.LimiteVolumenAguaMin.postUpdate(volumenAguaMin);\n\n        console.log(\"Valores de límites actualizados desde FIWARE.\");",
+            "type": "application/javascript"
+          },
+          "type": "script.ScriptAction"
+        },
+        {
+          "inputs": {},
+          "id": "5",
+          "configuration": {
+            "script": " var url \u003d\n\"http://localhost:1026/v2/entities/AireAcondicionado/attrs\";\n        var response \u003d actions.HTTP.sendHttpGetRequest(url, 3000);\n        \n        if (response \u003d\u003d\u003d null || response.isEmpty()) {\n          console.error(\"No se recibió respuesta de fiware para el aire\");\n        } else {\n          try {\n            var json \u003d JSON.parse(response);\n            var estadoAire \u003d json.estado.value;\n            items.AireEstado.postUpdate(estadoAire ? \"ON\" : \"OFF\");\n            console.log(\"Estado del aire actualizado: \" + (estadoAire ? \"ON\" : \"OFF\"));\n          } catch (e) {\n            console.error(\"Error al procesar la respuesta JSON del aire: \" + e.message);\n          }\n        }",
+            "type": "application/javascript"
+          },
+          "type": "script.ScriptAction"
+        },
+        {
+          "inputs": {},
+          "id": "6",
+          "configuration": {
+            "script": "var url \u003d \"http://localhost:1026/v2/entities/Luces/attrs\";\n        var response \u003d actions.HTTP.sendHttpGetRequest(url, 3000);\n        \n        if (response \u003d\u003d\u003d null || response.isEmpty()) {\n          console.error(\"No se recibió respuesta de fiware para las luces\");\n        } else {\n          try {\n            var json \u003d JSON.parse(response);\n            var estadoLuces \u003d json.estado.value;\n            items.LucesEstado.postUpdate(estadoLuces ? \"ON\" : \"OFF\");\n            console.log(\"Estado de las luces actualizado: \" + (estadoLuces ? \"ON\" : \"OFF\"));\n          } catch (e) {\n            console.error(\"Error al procesar la respuesta JSON de las luces: \" + e.message);\n          }\n        }",
+            "type": "application/javascript"
+          },
+          "type": "script.ScriptAction"
+        }
+      ],
+      "configuration": {},
+      "configDescriptions": [],
+      "uid": "e9925bb7be",
+      "name": "Inicio",
+      "tags": [],
+      "visibility": "VISIBLE"
+    }
+  },
+  "eaeba1d7ff": {
+    "class": "org.openhab.core.automation.dto.RuleDTO",
+    "value": {
+      "triggers": [
+        {
+          "id": "1",
+          "configuration": {
+            "itemName": "AireEstado"
+          },
+          "type": "core.ItemCommandTrigger"
+        }
+      ],
+      "conditions": [],
+      "actions": [
+        {
+          "inputs": {},
+          "id": "2",
+          "configuration": {
+            "script": "var url \u003d \"http://localhost:1026/v2/entities/AireAcondicionado/attrs/estado\";\nvar estadoAire \u003d items.AireEstado.state \u003d\u003d\u003d \"ON\";  \nvar body \u003d\u0027{\"value\": \u0027+ estadoAire +  \n                   \u0027, \"metadata\": {\u0027 +\n                   \u0027\"origen\": {\"value\": \"openhab\"}\u0027 +\n                   \u0027}}\u0027;   \nvar response \u003d actions.HTTP.sendHttpPutRequest(url,\u0027application/json\u0027,  body, 3000); console.log(\"Estado del aire acondicionado enviado a Fiware: \" + items.AireEstado.state);",
+            "type": "application/javascript"
+          },
+          "type": "script.ScriptAction"
+        }
+      ],
+      "configuration": {},
+      "configDescriptions": [],
+      "uid": "eaeba1d7ff",
+      "name": "AccionarAire",
+      "tags": [],
+      "visibility": "VISIBLE"
+    }
+  }
+}

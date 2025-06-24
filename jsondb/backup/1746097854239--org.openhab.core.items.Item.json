@@ -1,0 +1,228 @@
+{
+  "AireEstado": {
+    "class": "org.openhab.core.items.ManagedItemProvider$PersistedItem",
+    "value": {
+      "groupNames": [],
+      "itemType": "Switch",
+      "tags": [],
+      "label": "Aire Acondicionado",
+      "category": "heating"
+    }
+  },
+  "LimiteConsumoAguaMax": {
+    "class": "org.openhab.core.items.ManagedItemProvider$PersistedItem",
+    "value": {
+      "groupNames": [],
+      "itemType": "Number",
+      "tags": [
+        "Control"
+      ],
+      "label": "Consumo Agua Máx",
+      "category": "water"
+    }
+  },
+  "LimiteHorasRiego": {
+    "class": "org.openhab.core.items.ManagedItemProvider$PersistedItem",
+    "value": {
+      "groupNames": [],
+      "itemType": "String",
+      "tags": [
+        "Control"
+      ],
+      "label": "Horas de Riego",
+      "category": "time"
+    }
+  },
+  "LimiteHumedadAmbMax": {
+    "class": "org.openhab.core.items.ManagedItemProvider$PersistedItem",
+    "value": {
+      "groupNames": [],
+      "itemType": "Number",
+      "tags": [
+        "Control"
+      ],
+      "label": "Humedad Ambiental Máx",
+      "category": "humidity"
+    }
+  },
+  "LimiteHumedadAmbMin": {
+    "class": "org.openhab.core.items.ManagedItemProvider$PersistedItem",
+    "value": {
+      "groupNames": [],
+      "itemType": "Number",
+      "tags": [
+        "Control"
+      ],
+      "label": "Humedad Ambiental Mín",
+      "category": "humidity"
+    }
+  },
+  "LimiteHumedadSueloMax": {
+    "class": "org.openhab.core.items.ManagedItemProvider$PersistedItem",
+    "value": {
+      "groupNames": [],
+      "itemType": "Number",
+      "tags": [
+        "Control"
+      ],
+      "label": "Humedad Suelo Máx",
+      "category": "humidity"
+    }
+  },
+  "LimiteHumedadSueloMin": {
+    "class": "org.openhab.core.items.ManagedItemProvider$PersistedItem",
+    "value": {
+      "groupNames": [],
+      "itemType": "Number",
+      "tags": [
+        "Control"
+      ],
+      "label": "Humedad Suelo Mín",
+      "category": "humidity"
+    }
+  },
+  "LimiteLuzMax": {
+    "class": "org.openhab.core.items.ManagedItemProvider$PersistedItem",
+    "value": {
+      "groupNames": [],
+      "itemType": "Number",
+      "tags": [
+        "Control"
+      ],
+      "label": "Luz Máxima",
+      "category": "sun"
+    }
+  },
+  "LimiteLuzMin": {
+    "class": "org.openhab.core.items.ManagedItemProvider$PersistedItem",
+    "value": {
+      "groupNames": [],
+      "itemType": "Number",
+      "tags": [
+        "Control"
+      ],
+      "label": "Luz Mínima",
+      "category": "sun"
+    }
+  },
+  "LimiteTempMax": {
+    "class": "org.openhab.core.items.ManagedItemProvider$PersistedItem",
+    "value": {
+      "groupNames": [],
+      "itemType": "Number",
+      "tags": [
+        "Control"
+      ],
+      "label": "Temperatura Máx",
+      "category": "temperature"
+    }
+  },
+  "LimiteTempMin": {
+    "class": "org.openhab.core.items.ManagedItemProvider$PersistedItem",
+    "value": {
+      "groupNames": [],
+      "itemType": "Number",
+      "tags": [
+        "Control"
+      ],
+      "label": "Temperatura Mín",
+      "category": "temperature"
+    }
+  },
+  "LimiteVolumenAguaMin": {
+    "class": "org.openhab.core.items.ManagedItemProvider$PersistedItem",
+    "value": {
+      "groupNames": [],
+      "itemType": "Number",
+      "tags": [
+        "Control"
+      ],
+      "label": "Volumen Agua Mín",
+      "category": "water"
+    }
+  },
+  "LucesEstado": {
+    "class": "org.openhab.core.items.ManagedItemProvider$PersistedItem",
+    "value": {
+      "groupNames": [],
+      "itemType": "Switch",
+      "tags": [],
+      "label": "Luces",
+      "category": "light"
+    }
+  },
+  "MotorEstado": {
+    "class": "org.openhab.core.items.ManagedItemProvider$PersistedItem",
+    "value": {
+      "groupNames": [],
+      "itemType": "Switch",
+      "tags": [],
+      "label": "Estado del Motor",
+      "category": ""
+    }
+  },
+  "OrionHumedadAmbiental": {
+    "class": "org.openhab.core.items.ManagedItemProvider$PersistedItem",
+    "value": {
+      "groupNames": [],
+      "itemType": "Number",
+      "tags": [
+        "Measurement"
+      ],
+      "label": "Humedad Ambiente",
+      "category": "humidity"
+    }
+  },
+  "OrionHumedadSuelo": {
+    "class": "org.openhab.core.items.ManagedItemProvider$PersistedItem",
+    "value": {
+      "groupNames": [],
+      "itemType": "Number",
+      "tags": [
+        "Measurement"
+      ],
+      "label": "Humedad Suelo ",
+      "category": "humidity"
+    }
+  },
+  "OrionLuz": {
+    "class": "org.openhab.core.items.ManagedItemProvider$PersistedItem",
+    "value": {
+      "groupNames": [],
+      "itemType": "Number",
+      "tags": [],
+      "label": "Luz",
+      "category": "light"
+    }
+  },
+  "OrionNivel": {
+    "class": "org.openhab.core.items.ManagedItemProvider$PersistedItem",
+    "value": {
+      "groupNames": [],
+      "itemType": "Number",
+      "tags": [],
+      "label": "Nivel",
+      "category": "water"
+    }
+  },
+  "OrionTemperaturaC": {
+    "class": "org.openhab.core.items.ManagedItemProvider$PersistedItem",
+    "value": {
+      "groupNames": [],
+      "itemType": "Number",
+      "tags": [],
+      "label": "Temperatura  °C",
+      "category": "temperature"
+    }
+  },
+  "OrionTemperaturaF": {
+    "class": "org.openhab.core.items.ManagedItemProvider$PersistedItem",
+    "value": {
+      "groupNames": [],
+      "itemType": "Number",
+      "tags": [],
+      "label": "Temperatura ºF",
+      "category": "temperature"
+    }
+  }
+}
