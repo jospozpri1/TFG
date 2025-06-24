@@ -1,0 +1,17 @@
+# Database Configuration
+spring.datasource.url=jdbc:postgresql://localhost:5432/registro_invernadero
+spring.datasource.username=dit
+spring.datasource.password=dit
+spring.datasource.driver-class-name=org.postgresql.Driver
+
+# Hibernate Properties
+spring.jpa.show-sql=true
+spring.jpa.hibernate.ddl-auto=update
+spring.jpa.properties.hibernate.dialect=org.hibernate.dialect.PostgreSQLDialect
+spring.jpa.properties.hibernate.format_sql=true
+
+# Server Port
+server.port=10000
+
+# Swagger Properties
+springfox.documentation.swagger.v2.path=/api-docs
